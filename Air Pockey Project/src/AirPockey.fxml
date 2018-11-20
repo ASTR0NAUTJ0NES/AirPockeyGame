@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.Sphere?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPaneOuter" maxHeight="491.0" maxWidth="700.0" minHeight="491.0" minWidth="700.0" prefHeight="491.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AirPockeyController">
+   <children>
+      <MenuBar fx:id="menuBar" layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="closeMenu" mnemonicParsing="false" onAction="#onCloseMenuAction" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane fx:id="anchorPaneInner" layoutY="25.0" maxHeight="466.0" maxWidth="700.0" minHeight="466.0" minWidth="700.0" prefHeight="466.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <ImageView fx:id="AirPockeyBoardImage" fitHeight="466.0" fitWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="file:C:\Users\astr0\workspace\Air Pockey Project\src\AirPockeyBoard.png" />
+               </image>
+            </ImageView>
+            <Sphere fx:id="AirPockeyBall" layoutX="351.0" layoutY="233.0" scaleX="20.0" scaleY="20.0" scaleZ="20.0" />
+            <Rectangle fx:id="player1Paddle" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="90.0" layoutX="30.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="15.0">
+               <effect>
+                  <Reflection fraction="0.3" />
+               </effect></Rectangle>
+            <Rectangle fx:id="player2Paddle" arcHeight="5.0" arcWidth="5.0" fill="RED" height="90.0" layoutX="658.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" width="15.0">
+               <effect>
+                  <Reflection fraction="0.3" />
+               </effect></Rectangle>
+            <Rectangle fx:id="player1TopLeftEdge" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="150.0" stroke="BLACK" strokeType="INSIDE" width="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Rectangle fx:id="player2TopRightEdge" arcHeight="5.0" arcWidth="5.0" fill="RED" height="150.0" layoutX="686.0" stroke="BLACK" strokeType="INSIDE" width="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Rectangle fx:id="player1BottomLeftEdge" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="150.0" layoutY="240.0" stroke="BLACK" strokeType="INSIDE" width="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+            <Rectangle fx:id="player2BottomRightEdge" arcHeight="5.0" arcWidth="5.0" fill="RED" height="150.0" layoutX="686.0" layoutY="240.0" stroke="BLACK" strokeType="INSIDE" width="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Label fx:id="player1Score" alignment="CENTER" contentDisplay="CENTER" layoutX="153.0" layoutY="49.0" prefHeight="48.0" prefWidth="30.0" text="0" textAlignment="CENTER" textFill="BLUE" AnchorPane.bottomAnchor="368.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="520.0" AnchorPane.topAnchor="50.0">
+               <font>
+                  <Font name="AR DESTINE" size="50.0" />
+               </font>
+               <effect>
+                  <Reflection fraction="0.5" />
+               </effect>
+            </Label>
+            <Label fx:id="player2Score" alignment="CENTER" contentDisplay="CENTER" layoutX="525.0" layoutY="49.0" prefHeight="48.0" prefWidth="30.0" text="0" textAlignment="CENTER" textFill="RED" AnchorPane.bottomAnchor="368.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="50.0">
+               <font>
+                  <Font name="AR DESTINE" size="50.0" />
+               </font>
+               <effect>
+                  <Reflection fraction="0.5" />
+               </effect>
+            </Label>
+            <Label fx:id="startLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="212.0" prefHeight="43.0" prefWidth="700.0" text="Press [ENTER] to play!" textAlignment="CENTER" textFill="#ffa100">
+               <font>
+                  <Font name="AR DESTINE" size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
